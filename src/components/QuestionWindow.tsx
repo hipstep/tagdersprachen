@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import QuestionCard from "./QuestionCard"
+import QuestionFace from "./QuestionFace";
 import data from "../assets/data";
 
 
@@ -81,9 +82,11 @@ function QuestionWindow() {
                 </div>
             )}
             {(
+                pickedQuestion !== undefined
+                &&
                 isQuestionPicked
                 &&
-                pickedQuestion
+                <QuestionFace questionIndex={pickedQuestion}/>
             )}
 
             <button onClick={resetLocalStorage}>Reset Local Storage</button>
