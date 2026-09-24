@@ -2,8 +2,8 @@ import data from "../assets/data"
 
 type propsTypes = {
     questionIndex: number,
-    isQuestionPickedState: any,
-    pickedQuestionState: any
+    setIsQuestionPicked: any,
+    setPickedQuestion: any
 }
 
 function QuestionCard(props: propsTypes) {
@@ -32,7 +32,7 @@ function QuestionCard(props: propsTypes) {
             break;
     }
     return(
-        <div className="p-8" onClick={() => {props.isQuestionPickedState(true); props.pickedQuestionState(props.questionIndex)}}>
+        <div className="p-8" onClick={() => {props.setIsQuestionPicked(true); props.setPickedQuestion(props.questionIndex)}}>
             <div className="w-full h-full box-border rounded-2xl flex justify-center items-center uppercase text-white cursor-pointer" style={{backgroundColor : colour}}>
                 {category}
             </div>
