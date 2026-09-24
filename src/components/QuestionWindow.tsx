@@ -7,10 +7,10 @@ function QuestionWindow() {
     const [pickedQuestion, setPickedQuestion] = useState<number | undefined>(undefined);
     const [seenQuestions, setSeenQuestions] = useState<number[]>([]);
 
-    function getRandomInt(max: number) {
-        // <0; max)
-        return Math.floor(Math.random() * max);
-    }
+    // function getRandomInt(max: number) {
+    //     // <0; max)
+    //     return Math.floor(Math.random() * max);
+    // }
 
     useEffect(() => { //Adds picked questions to seenQuestions
         if(pickedQuestion !== undefined && !seenQuestions.includes(pickedQuestion)){ 
