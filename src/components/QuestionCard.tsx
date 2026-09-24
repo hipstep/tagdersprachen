@@ -34,7 +34,7 @@ function QuestionCard(props: propsTypes) {
     return(
         <div className="p-8" onClick={() => {props.setIsQuestionPicked(true); props.setPickedQuestion(props.questionIndex)}}>
             <div className="w-full h-full box-border rounded-2xl flex justify-center items-center uppercase text-white cursor-pointer" style={{backgroundColor : colour}}>
-                {category}
+                {props.questionIndex}. {category}
             </div>
         </div>
     )
