@@ -10,10 +10,11 @@ export default [
         translation: "Szpital"
     },
 
-    {
-        category: "rebus",
-        text: "stop"
-    },
+    // {
+    //     category: "rebus",
+    //     img: "src",
+    //     word: "stop"
+    // },
 
     {
         category: "trivia",
@@ -23,7 +24,7 @@ export default [
 
     {
         category: "connections",
-        words: ["dupa", "ogon", "palec", "stopa"],
+        words: ["pupa", "ogon", "palec", "stopa"],
         terms: ["das Baum", "der Ogon", "der Palec", "der Fuss"]
     }
 ]
