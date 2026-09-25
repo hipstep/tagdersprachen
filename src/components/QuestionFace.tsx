@@ -11,7 +11,15 @@ let questionData: any
 function TongueTwister(){
     return(
         <>
-            <p className="text-black">{questionData.category}</p>
+            <p className="text-black">
+                {questionData.category}
+            </p>
+            <div>
+                {questionData.text}
+            </div>
+            <div>
+                {questionData.translation}
+            </div>
             <BigButton label="IDK"/>
         </>
     )
