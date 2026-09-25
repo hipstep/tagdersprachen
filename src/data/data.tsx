@@ -92,8 +92,8 @@ export default [
 
     {
         category: "translation",
-        word: "der Schmetterling",
-        translation: "Motyl"
+        word: "der Arbeit",
+        translation: "Praca"
     },
 
     {
@@ -102,22 +102,22 @@ export default [
         translation: "Kurtka"
     },
 
-    {
+    { 
         category: "translation",
-        word: "der Taschenrechner",
-        translation: "Kalkulator"
+        word: "der Rucksack",
+        translation: "Plecak"
     },
 
     {
         category: "translation",
-        word: "der Topf",
-        translation: "Doniczka"
+        word: "die Pflanze",
+        translation: "Roślina"
     },
 
     {
         category: "translation",
-        word: "der Heizkörper",
-        translation: "Kaloryfer"
+        word: "der Stuhl",
+        translation: "Krzesło"
     },
 
     {
@@ -128,20 +128,20 @@ export default [
 
     {
         category: "translation",
-        word: "der Anpfiff",
-        translation: "Gwizdek"
+        word: "der Ball",
+        translation: "Piłka"
     },
 
     {
         category: "translation",
-        word: "die Biene",
-        translation: "Pszczoła"
+        word: "das Schwein",
+        translation: "Świnia"
     },
 
     {
         category: "translation",
-        word: "die Erdbeere",
-        translation: "Truskawka"
+        word: "die Milch",
+        translation: "Mleko"
     },
 
     {
@@ -152,14 +152,14 @@ export default [
 
     {
         category: "translation",
-        word: "die Katze",
-        translation: "Kot"
+        word: "Schwarz",
+        translation: "Czarny"
     },
 
     {
         category: "translation",
-        word: "der Streitkolben",
-        translation: "Buzdygan"
+        word: "das Ohr",
+        translation: "Ucho"
     },
 
 
@@ -172,10 +172,76 @@ export default [
 
 
     // --Trivia
+    { // !usuń
+        category: "trivia",
+        question: "Jaka jest stolica Niemiec?",
+        answers: ["Berlin", "Monachium", "Hamburg", "Frankfurt"]
+    },
+
+    { // !usuń
+        category: "trivia",
+        question: "Jakie kolory znajdują się na fladze Niemiec?",
+        answers: ["Czarny, czerwony i złoty", "Czerwony, biały i niebieski", "Czarny, biały i czerwony", "Zielony, żółty i czerwony"]
+    },
+
+    { // !usuń
+        category: "trivia",
+        question: "Z jakiego kraju pochodzi marka Volkswagen?",
+        answers: ["Niemcy", "Francja", "Włochy", "Szwecja"]
+    },
+
     {
         category: "trivia",
-        question: "Where is Germany located?",
-        answers: ["Europe", "Asia", "Australia", "North America"]
+        question: "Jakie jest największe miasto Niemiec?",
+        answers: ["Berlin", "Hamburg", "Monachium", "Kolonia"]
+    },
+
+    {
+        category: "trivia",
+        question: "Jak nazywa się słynny niemiecki festiwal piwa odbywający się w Monachium?",
+        answers: ["Oktoberfest", "Karneval", "Berlinale", "Weinfest"]
+    },
+
+    { // !usuń
+        category: "trivia",
+        question: "Jaką walutą płaci się w Niemczech?",
+        answers: ["Euro", "Marką", "Frankiem", "Koroną"]
+    },
+
+    {
+        category: "trivia",
+        question: "Który niemiecki wynalazca skonstruował pierwszy samochód z silnikiem spalinowym?",
+        answers: ["Karl Benz", "Albert Einstein", "Johannes Gutenberg", "Werner von Siemens"]
+    },
+
+    {
+        category: "trivia",
+        question: "Ile krajów graniczy z Niemcami?",
+        answers: ["9", "7", "8", "10"]
+    },
+    
+    {
+        category: "trivia",
+        question: "Wie heißt die Hauptstadt von Deutschland?",
+        answers: ["Berlin", "Wien", "Bern", "Hamburg"]
+    },
+
+    {
+        category: "trivia",
+        question: "Welche Farben hat die deutsche Flagge?",
+        answers: ["Schwarz, Rot und Gold", "Blau, Weiß und Rot", "Grün, Weiß und Rot", "Schwarz, Blau und Weiß"]
+    },
+
+    { // !usuń
+        category: "trivia",
+        question: "Welche Sprache spricht man in Deutschland?",
+        answers: ["Deutsch", "Spanisch", "Italienisch", "Französisch"]
+    },
+
+    { // !usuń
+        category: "trivia",
+        question: "Który dokument z 1949 roku stanowi podstawę ustroju Republiki Federalnej Niemiec?",
+        answers: ["Grundgesetz", "Reichsgesetz", "Bundesvertrag", "Deutschlandgesetz"]
     },
 
 

@@ -1,10 +1,17 @@
-import data from "../assets/data"
+import data from "../data/data"
+
+import cardBackBlue from "../assets/photos/cardBackBlue.png";
+import cardBackRed from "../assets/photos/cardBackRed.png";
+import cardBackPurple from "../assets/photos/cardBackPurple.png";
+import cardBackYellow from "../assets/photos/cardBackYellow.png";
+import cardBackGreen from "../assets/photos/cardBackGreen.png";
 
 type propsTypes = {
     questionIndex: number,
     setIsQuestionPicked: any,
     setPickedQuestion: any
 }
+
 
 function QuestionCard(props: propsTypes) {
     const category = data[props.questionIndex].category;
@@ -13,27 +20,19 @@ function QuestionCard(props: propsTypes) {
     // rebus
     // trivia
     // connections
-    let colour = "black"
-    switch(category){
-        case "tongue-twister":
-            colour = "red";
-            break;
-        case "translation":
-            colour = "green";
-            break;
-        case "rebus":
-            colour = "blue";
-            break;
-        case "trivia":
-            colour = "yellow";
-            break;
-        case "connections":
-            colour = "orange";
-            break;
-    }
+
+    const categoryColours: Record<string, string> = {
+        "tongue-twister": cardBackBlue,
+        "translation": cardBackRed,
+        "rebus": cardBackPurple,
+        "trivia": cardBackYellow,
+        "connections": cardBackGreen,
+    };
+    const colour = categoryColours[category];
+
     return(
         <div className="p-8" onClick={() => {props.setIsQuestionPicked(true); props.setPickedQuestion(props.questionIndex)}}>
-            <div className="w-full h-full box-border rounded-2xl flex justify-center items-center uppercase text-white cursor-pointer" style={{backgroundColor : colour}}>
+            <div className="w-full h-full box-border rounded-2xl flex justify-center items-center uppercase text-white cursor-pointer bg-contain" style={{backgroundImage : `url(${colour})`}}>
                 {props.questionIndex}. {category}
             </div>
         </div>

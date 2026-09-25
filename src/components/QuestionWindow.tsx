@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import QuestionCard from "./QuestionCard"
 import QuestionFace from "./QuestionFace";
-import data from "../assets/data";
+import data from "../data/data";
 
+import questionWindowBackground from "../assets/photos/questionWindowBackground.png";
 
 function QuestionWindow() {
     const [isQuestionPicked, setIsQuestionPicked] = useState(false);
@@ -35,14 +36,14 @@ function QuestionWindow() {
     }
     
 
-    useEffect(() => { //Adds picked questions to seenQuestions
+    useEffect(() => { // Adds picked questions to seenQuestions
         if(pickedQuestion !== undefined && !seenQuestions.includes(pickedQuestion)){ 
             setSeenQuestions([...seenQuestions, pickedQuestion]);
         }
     }, [pickedQuestion]) // runs on the first render and after every change in pickedQuestions
 
 
-    useEffect(() =>{ //Gets seen questions from local storage
+    useEffect(() =>{ // Gets seen questions from local storage
         const stored = localStorage.getItem("seenQuestions");
         const questions = stored ? JSON.parse(stored) : [];
         
@@ -70,11 +71,14 @@ function QuestionWindow() {
 
     cardRandomizer();
     return(
-        <div className="w-2/3 h-5/6 bg-yellow-50 absolute top-1/2 left-1/2 rounded-2xl -translate-1/2">
+        <div 
+            className="w-2/3 h-5/6 absolute top-1/2 left-1/2 rounded-3xl -translate-1/2 bg-auto bg-center bg-[#ebcf9c]  z-100"
+            // style={{backgroundImage: `url(${questionWindowBackground})`}}
+            >
             {(
                 !isQuestionPicked
                 &&
-                <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-10 px-20 py-10">
+                <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-10 px-20 py-16">
                     <QuestionCard questionIndex={randomizedQuestions[0]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
                     <QuestionCard questionIndex={randomizedQuestions[1]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
                     <QuestionCard questionIndex={randomizedQuestions[2]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>

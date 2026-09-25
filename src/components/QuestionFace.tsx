@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
-import data from "../assets/data";
+import data from "../data/data";
 import BigButton from "./BigButton";
+import ClickToReveal from "./ClickToReveal";
 
 type propsTypes = {
     questionIndex: number
@@ -17,9 +18,7 @@ function TongueTwister(){
             <div>
                 {questionData.text}
             </div>
-            <div>
-                {questionData.translation}
-            </div>
+            <ClickToReveal text={questionData.translation}/>
             <BigButton label="IDK"/>
         </>
     )
