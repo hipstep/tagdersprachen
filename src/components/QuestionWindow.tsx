@@ -4,7 +4,8 @@ import QuestionFace from "./QuestionFace";
 import data from "../data/data";
 
 type propsTypes = {
-    setIsAnsweredCorrectly: any
+    setIsAnsweredCorrectly: any,
+    diceRoll: number | undefined
 }
 
 
@@ -12,6 +13,13 @@ function QuestionWindow(props: propsTypes) {
     const [isQuestionPicked, setIsQuestionPicked] = useState(false);
     const [pickedQuestion, setPickedQuestion] = useState<number | undefined>(undefined);
     const [seenQuestions, setSeenQuestions] = useState<number[]>([]);
+
+    const [checkAnswer, setCheckAnswer] = useState<boolean | undefined>(undefined);
+
+    useEffect (() => {
+        if(checkAnswer !== undefined)
+            props.setIsAnsweredCorrectly(checkAnswer);
+    }, [checkAnswer])
 
     let randomizedQuestions: number[] = [];
 
@@ -23,7 +31,6 @@ function QuestionWindow(props: propsTypes) {
     function cardRandomizer(){
         if(seenQuestions.length > data.length-4){
             resetLocalStorage();
-            console.log(seenQuestions);
         }
         else{
             for(let i = 0; i < 4; i++){
@@ -65,38 +72,39 @@ function QuestionWindow(props: propsTypes) {
 
 
     function resetLocalStorage(){
-        console.log("Storage Cleared!")
         localStorage.clear();
         setSeenQuestions([]);
     }
 
 
-
     cardRandomizer();
     return(
         <div 
-            className="w-2/3 h-5/6 absolute top-1/2 left-1/2 rounded-3xl -translate-1/2 bg-auto bg-center bg-[#ebcf9c]  z-100"
-            // style={{backgroundImage: `url(${questionWindowBackground})`}}
+            className="w-2/3 h-5/6 absolute top-1/2 left-1/2 rounded-3xl -translate-1/2 bg-auto bg-center bg-[#bfa87d] z-100"
             >
+
             {(
                 !isQuestionPicked
                 &&
-                <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-10 px-20 py-16">
-                    <QuestionCard questionIndex={randomizedQuestions[0]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
-                    <QuestionCard questionIndex={randomizedQuestions[1]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
-                    <QuestionCard questionIndex={randomizedQuestions[2]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
-                    <QuestionCard questionIndex={randomizedQuestions[3]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
-                </div>
+                <>
+                    <div className="absolute top-1/30 left-1/2 -translate-x-1/2 text-3xl text-black">
+                        Wylosowana liczba: <b>{props.diceRoll}</b>
+                    </div>
+                    <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-10 px-20 py-16">
+                        <QuestionCard questionIndex={randomizedQuestions[0]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
+                        <QuestionCard questionIndex={randomizedQuestions[1]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
+                        <QuestionCard questionIndex={randomizedQuestions[2]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
+                        <QuestionCard questionIndex={randomizedQuestions[3]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
+                    </div>
+                </>
             )}
             {(
                 pickedQuestion !== undefined
                 &&
                 isQuestionPicked
                 &&
-                <QuestionFace questionIndex={pickedQuestion} setIsAnsweredCorrectly={props.setIsAnsweredCorrectly}/>
+                <QuestionFace questionIndex={pickedQuestion} setIsAnsweredCorrectly={setCheckAnswer}/>
             )}
-
-            <button onClick={resetLocalStorage}>Reset Local Storage</button>
         </div>
     )
 }

@@ -10,26 +10,70 @@ function App() {
   const [isQuestionWindowOpen, setIsQuestionWindowOpen] = useState(false);
   const [diceNumber, setDiceNumber] = useState<number | undefined>(undefined)
   const [isAnsweredCorrectly, setIsAnsweredCorrectly] = useState<boolean | undefined>(undefined);
+
+  const [isLastTurn, setIsLastTurn] = useState(false);
+  const [isEndOfGame, setIsEndOfGame] = useState(false);
+
   const currentTeam = useRef(0);
+  const [teamsPositions, setTeamsPositions] = useState([0,0,0,0,0]);
 
-  useEffect(() =>{
+  useEffect(() =>{ // sequence after rolling the dice
     if(diceNumber !== undefined){
-      setIsQuestionWindowOpen(true);
+      setTimeout(() => {
+        setIsQuestionWindowOpen(true);
+      }, 300)
     }
   }, [diceNumber])
 
-  useEffect(() =>{
-    if(diceNumber !== undefined){
-      console.log("wylosowano: " + diceNumber)
+  useEffect(() =>{ // question window animation
+    if(isQuestionWindowOpen){
+      const animation = document.getElementById('questionWindow')?.children[0]!.animate([
+              {
+                transform: "scale(60%)",
+              },
+              {
+                transform: "scale(105%)"
+              },
+              {
+                transform: "scale(100%)"
+              }
+          ],
+          100)
+      animation!.play()
     }
-  }, [diceNumber])
+  }, [isQuestionWindowOpen])
 
-  useEffect(() =>{
+  useEffect(() =>{ // sequence after answering the question
     if(isAnsweredCorrectly !== undefined){
-      if(isAnsweredCorrectly)
-        console.log("działa!");
+      if(isAnsweredCorrectly && diceNumber !== undefined){
+        console.log("Odpowiedziano dobrze na pytanie!");
+        setTeamsPositions(teamsPositions.map((val, i) => i === currentTeam.current ? (val + diceNumber >= 9 ? 9 : val + diceNumber) : val));
+      }
+      
+      setIsQuestionWindowOpen(false);
+      setDiceNumber(undefined);
+      setIsAnsweredCorrectly(undefined);
+      currentTeam.current = ((currentTeam.current + 1) % 5);
     }
   })
+
+  useEffect(() =>{ // checks if there is a winner
+    if(teamsPositions.includes(9)){
+      setIsLastTurn(true);
+    }
+    if(teamsPositions.includes(9) && currentTeam.current === 0 && isLastTurn){
+      setIsEndOfGame(true);
+    }
+  }, [teamsPositions])
+
+  useEffect(() =>{
+    if(isEndOfGame)
+      console.log("Koniec gry!");
+  }, [isEndOfGame])
+
+  function resetLocalStorage(){
+        localStorage.clear();
+  }
 
   return (
     <>
@@ -40,20 +84,23 @@ function App() {
         {(
           isQuestionWindowOpen
           &&
-          <QuestionWindow setIsAnsweredCorrectly={setIsAnsweredCorrectly}/>
+          <div id='questionWindow'>
+            <QuestionWindow setIsAnsweredCorrectly={setIsAnsweredCorrectly} diceRoll={diceNumber}/>
+          </div>
         )}
       
-        <GroupList currentGroup={currentTeam.current} />
+        <GroupList currentGroup={currentTeam.current} teamsPosition={teamsPositions}/>
 
         <Dice setDiceNumber={setDiceNumber} />
 
-        <button onClick={() => {setIsQuestionWindowOpen(!isQuestionWindowOpen)}} className='bg-red-500'>Change</button>
+        <button onClick={resetLocalStorage} className="absolute bottom-0 right-0 cursor-pointer text-white font-bold">Zresetuj pytania</button>
       </div>
       {(
-        isQuestionWindowOpen
+        (isQuestionWindowOpen || isEndOfGame)
         &&
         <div className="bg-black/60 top-0 left-0 absolute z-0" style={{width: "100vw", height: "100vh"}}/>
       )}
+      
     </>
   )
 }

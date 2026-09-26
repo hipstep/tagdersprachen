@@ -52,7 +52,7 @@ export default [
         text: "Der Leutnant von Leuthen befahl seinen Leuten, nicht eher zu läuten als der Leutnant von Leuthen seinen Leuten das Läuten befahl.",
         translation: "Porucznik z Leuthen rozkazał swoim ludziom, by nie dzwonili, dopóki on sam nie wyda im takiego rozkazu."
     },
-{
+    {
         category: "tongue-twister",
         text: "Der Sumpfschlump schlumpft sich durch den Sumpfschlumpf.",
         translation: "Bagienny Smerf przedziera się przez bagna."

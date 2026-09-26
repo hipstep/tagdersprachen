@@ -8,7 +8,7 @@ function ClickToReveal(props: propsTypes){
     const [isRevealed, setIsRevealed] = useState(false);
 
     return(
-        <div className="relative flex justify-center items-center text-2xl text-black border-4 border-amber-500 p-5 box-border rounded-2xl m-10 overflow-hidden">
+        <div className="relative flex justify-center items-center text-2xl text-black border-4 border-amber-500 p-5 box-border rounded-2xl m-10 overflow-hidden cursor-pointer">
             {(
                 !isRevealed
                 &&
