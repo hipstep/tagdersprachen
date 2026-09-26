@@ -3,9 +3,12 @@ import QuestionCard from "./QuestionCard"
 import QuestionFace from "./QuestionFace";
 import data from "../data/data";
 
-import questionWindowBackground from "../assets/photos/questionWindowBackground.png";
+type propsTypes = {
+    setIsAnsweredCorrectly: any
+}
 
-function QuestionWindow() {
+
+function QuestionWindow(props: propsTypes) {
     const [isQuestionPicked, setIsQuestionPicked] = useState(false);
     const [pickedQuestion, setPickedQuestion] = useState<number | undefined>(undefined);
     const [seenQuestions, setSeenQuestions] = useState<number[]>([]);
@@ -90,7 +93,7 @@ function QuestionWindow() {
                 &&
                 isQuestionPicked
                 &&
-                <QuestionFace questionIndex={pickedQuestion}/>
+                <QuestionFace questionIndex={pickedQuestion} setIsAnsweredCorrectly={props.setIsAnsweredCorrectly}/>
             )}
 
             <button onClick={resetLocalStorage}>Reset Local Storage</button>

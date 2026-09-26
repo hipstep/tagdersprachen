@@ -4,10 +4,12 @@ import BigButton from "./BigButton";
 import ClickToReveal from "./ClickToReveal";
 
 type propsTypes = {
-    questionIndex: number
+    questionIndex: number,
+    setIsAnsweredCorrectly: any
 }
 
 let questionData: any
+let setIsAnsweredCorrectly: any
 
 function TongueTwister(){
     return(
@@ -58,6 +60,7 @@ function Connections(){
 
 function QuestionFace(props: propsTypes){
     questionData = data[props.questionIndex];
+    setIsAnsweredCorrectly = props.setIsAnsweredCorrectly;
 
     let question: ReactNode | null;
     switch(questionData.category){

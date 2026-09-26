@@ -30,10 +30,23 @@ function QuestionCard(props: propsTypes) {
     };
     const colour = categoryColours[category];
 
+    const categoryNames: Record<string, string> = {
+        "tongue-twister": "die Zungenbrecher",
+        "translation": "die Übersetzung",
+        "rebus": "der Rebus",
+        "trivia": "die Trivia",
+        "connections": "die Wortverbindungen",
+    };
+    const name = categoryNames[category];
+
     return(
-        <div className="p-8" onClick={() => {props.setIsQuestionPicked(true); props.setPickedQuestion(props.questionIndex)}}>
-            <div className="w-full h-full box-border rounded-2xl flex justify-center items-center uppercase text-white cursor-pointer bg-contain" style={{backgroundImage : `url(${colour})`}}>
-                {props.questionIndex}. {category}
+        <div className="p-8">
+            <div 
+                className="w-full h-full box-border rounded-2xl flex justify-center items-center uppercase text-black cursor-pointer bg-contain shadow-2xl hover:shadow-[#565655] duration-150 border-2 border-black font-bold" 
+                style={{backgroundImage : `url(${colour})`}}
+                onClick={() => {props.setIsQuestionPicked(true); props.setPickedQuestion(props.questionIndex)}}
+                >
+                {name}
             </div>
         </div>
     )
