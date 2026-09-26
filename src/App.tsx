@@ -26,8 +26,8 @@ function App() {
 
   useEffect(() =>{
     if(isAnsweredCorrectly !== undefined){
-      // if(isAnsweredCorrectly)
-
+      if(isAnsweredCorrectly)
+        console.log("działa!");
     }
   })
 

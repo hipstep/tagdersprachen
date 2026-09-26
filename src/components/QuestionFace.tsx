@@ -21,7 +21,7 @@ function TongueTwister(){
                 {questionData.text}
             </div>
             <ClickToReveal text={questionData.translation}/>
-            <BigButton label="IDK"/>
+            <BigButton label="Dobrze" action={setIsAnsweredCorrectly(true)}/>
         </>
     )
 }
@@ -29,7 +29,7 @@ function Translation(){
     return(
         <>
             <p className="text-black">{questionData.category}</p>
-            <BigButton label="IDK"/>
+            <BigButton label="Dobrze" action={setIsAnsweredCorrectly(true)}/>
         </>
     )
 }
@@ -37,7 +37,7 @@ function Rebus(){
     return(
         <>
             <p className="text-black">{questionData.category}</p>
-            <BigButton label="IDK"/>
+            <BigButton label="Dobrze" action={setIsAnsweredCorrectly(true)}/>
         </>
     )
 }
@@ -45,7 +45,7 @@ function Trivia(){
     return(
         <>
             <p className="text-black">{questionData.category}</p>
-            <BigButton label="IDK"/>
+            <BigButton label="Dobrze" action={setIsAnsweredCorrectly(true)}/>
         </>
     )
 }
@@ -53,7 +53,7 @@ function Connections(){
     return(
         <>
             <p className="text-black">{questionData.category}</p>
-            <BigButton label="IDK"/>
+            <BigButton label="Dobrze" action={setIsAnsweredCorrectly(true)}/>
         </>
     )
 }
