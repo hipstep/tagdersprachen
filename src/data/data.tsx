@@ -3,82 +3,96 @@ export default [
     {
         category: "tongue-twister",
         text: "Zwischen zwei Zwetschgenzweigen zwitschern zwei zwitschernde Schwalben.",
+        audio: "01",
         translation: "Między dwiema gałęziami śliwy ćwierkają dwie ćwierkające jaskółki."
     },
     {
         category: "tongue-twister",
         text: "Die rot betatzte Katze tritt die Treppe krumm.",
+        audio: "02",
         translation: "Kot o rudych łapach krzywi schody, stąpając po nich."
     },
 
     {
         category: "tongue-twister",
         text: "Blautkraut bleibt Blaukraut und Brautkleid bleibt Brautkleid.",
+        audio: "03",
         translation: "Czerwona kapusta pozostaje czerwoną kapustą, a suknia ślubna pozostaje suknią ślubną."
     },
 
     {
         category: "tongue-twister",
         text: "Der Zahnarzt zieht Zähne mit Zahnarztzange im Zahnarztzimmer.",
+        audio: "04",
         translation: "Dentysta usuwa zęby kleszczami stomatologicznymi w gabinecie stomatologicznym."
     },
 
     {
         category: "tongue-twister",
         text: "Jedes Jahr im Juli essen Jana und Julia Johannisbeeren.",
+        audio: "05",
         translation: "Każdego roku w lipcu Jana i Julia jedzą porzeczki."
     },
 
     {
         category: "tongue-twister",
         text: "Eine gute gebratene Gans mit einer goldenen Gabel gegessen ist eine gute Gabe Gottes.",
+        audio: "06",
         translation: "Dobra pieczona gęś, zjedzona złotym widelcem, to dobry dar Boży."
     },
 
     {
         category: "tongue-twister",
         text: "Zwischen zwei Zwetschgenzweigen zwitschern zwei zwitschernde Schwalben.",
+        audio: "07",
         translation: "Między dwiema gałęziami śliwy ćwierkają dwie ćwierkające jaskółki."
     },
 
     {
         category: "tongue-twister",
         text: "Kleine Kinder können keine kleinen Kirschkerne knacken.",
+        audio: "08",
         translation: "Małe dzieci nie potrafią rozgryźć małych pestek wiśni."
     },
 
     {
         category: "tongue-twister",
         text: "Der Leutnant von Leuthen befahl seinen Leuten, nicht eher zu läuten als der Leutnant von Leuthen seinen Leuten das Läuten befahl.",
+        audio: "09",
         translation: "Porucznik z Leuthen rozkazał swoim ludziom, by nie dzwonili, dopóki on sam nie wyda im takiego rozkazu."
     },
     {
         category: "tongue-twister",
         text: "Der Sumpfschlump schlumpft sich durch den Sumpfschlumpf.",
+        audio: "10",
         translation: "Bagienny Smerf przedziera się przez bagna."
     },
 
     {
         category: "tongue-twister",
         text: "Wenn Fliegen hinter Fliegen fliegen, dann fliegen Fliegen Fliegen nach.",
+        audio: "11",
         translation: "Gdy muchy lecą za muchami, to muchy lecą za muchami."
     },
 
     {
         category: "tongue-twister",
         text: "Schneiders Schere schneidet scharf. Scharf schneidet Schneiders Schere.",
+        audio: "12",
         translation: "Nożyce krawca tną ostro. Ostro tną nożyce krawca."
     },
 
     {
         category: "tongue-twister",
         text: "Hinter Hermanns Hannes Haus hängen hundert Hemden raus.",
+        audio: "13",
         translation: "Za domem Hermannsa Hannesa wisi na zewnątrz sto koszul."
     },
 
     {
         category: "tongue-twister",
         text: "Oma kocht Opa Kohl. Opa kocht Oma Kohl. Doch Opa kocht Oma Rosenkohl. Oma dagegen kocht Opa Rotkohl.",
+        audio: "14",
         translation: "Babcia gotuje dziadkowi kapustę. Dziadek gotuje babci kapustę. Jednak dziadek gotuje babci brukselkę. Babcia natomiast gotuje dziadkowi czerwoną kapustę."
     },
     
@@ -166,67 +180,67 @@ export default [
     // --Rebus -------------------------------------------------------------------------------------------------------------------------------------------
     {
         category: "rebus",
-        img: "src",
+        img: "Handtuch",
         word: "das Handtuch"
     },
 
     {
         category: "rebus",
-        img: "src",
+        img: "Haustier",
         word: "das Haustier"
     },
 
     {
         category: "rebus",
-        img: "src",
+        img: "Regenschirm",
         word: "der Regenschirm"
     },
 
     {
         category: "rebus",
-        img: "src",
+        img: "Sonnenbrille",
         word: "die Sonnenbrille"
     },
 
     {
         category: "rebus",
-        img: "src",
+        img: "Hausaufgabe",
         word: "die Hausaufgabe"
     },
 
     {
         category: "rebus",
-        img: "src",
+        img: "Geldborse",
         word: "die Geldbörse"
     },
              
     {
         category: "rebus",
-        img: "src",
+        img: "Handtasche",
         word: "die Handtasche"
     },
 
     {
         category: "rebus",
-        img: "src",
+        img: "Zahnarzt",
         word: "der Zahnarzt"
     },
 
     {
         category: "rebus",
-        img: "src",
+        img: "Baumhaus",
         word: "das Baumhaus"
     },
 
     {
         category: "rebus",
-        img: "src",
+        img: "Schlafzimmer",
         word: "das Schlafzimmer"
     },
 
     {
         category: "rebus",
-        img: "src",
+        img: "Handschuh",
         word: "der Handschuh"
     },
         
@@ -310,8 +324,8 @@ export default [
     //1
     {
         category: "connections",
-        words: ["pupa", "głowa", "palec", "stopa"],
-        terms: ["das Baum", "der Kopf", "der Palec", "der Fuss"]
+        words: ["brzuch", "głowa", "palec", "stopa"],
+        terms: ["das Bauch", "der Kopf", "der Finger", "der Fuß"]
     },
 
     //2

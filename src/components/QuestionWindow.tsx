@@ -82,7 +82,7 @@ function QuestionWindow(props: propsTypes) {
     cardRandomizer();
     return(
         <div 
-            className="w-2/3 h-5/6 absolute top-1/2 left-1/2 rounded-3xl -translate-1/2 bg-auto bg-center bg-[#bfa87d] z-100"
+            className="w-2/3 h-5/6 absolute top-1/2 left-1/2 rounded-3xl -translate-1/2 bg-auto bg-center z-100"
             style={{backgroundImage: `url(${background})`}}
             >
 

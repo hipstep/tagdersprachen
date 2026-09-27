@@ -95,6 +95,7 @@ function App() {
         <Dice setDiceNumber={setDiceNumber} />
 
         <button onClick={resetLocalStorage} className="-row-start-3 col-start-2 col-end-8 cursor-pointer text-black border-2 font-bold text-4xl rounded-3xl bg-[#bfa87d] hover:bg-[#d1c6b2] cloister-black">RESET</button>
+
       </div>
       {(
         (isQuestionWindowOpen || isEndOfGame)
