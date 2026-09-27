@@ -21,41 +21,20 @@ function fisherYatesShuffle(arr: number[]) {
 
 
 function TongueTwister(){
+    const mainColor = "#223252";
+    const secondColor = "#93a1bb";
+    const textShadow = `0px 1px 1px ${secondColor}, 0px 1px 2px ${secondColor}, 0px 2px 4px ${secondColor}`;
+
     return(
         <div className="p-10">
-            <p className="h-20 text-4xl">
+            <div 
+                className="text-6xl cloister-black p-8 text-white rounded-3xl"
+                style={{backgroundColor: mainColor, textShadow: textShadow}}
+            >
                 die Zungenbrecher
-            </p>
+            </div>
             <div className="text-3xl">
                 {questionData.text}
-            </div>
-            <ClickToReveal text={questionData.translation}/>
-            <div>
-                <button 
-                    className="w-30 h-5 rounded-2xl flex justify-center items-center bg-green-500" 
-                    onClick={() => setIsAnsweredCorrectly(true)}
-                >
-                    Dobrze
-                </button>
-                <button 
-                    className="w-30 h-5 rounded-2xl flex justify-center items-center bg-red-500" 
-                    onClick={() => setIsAnsweredCorrectly(false)}
-                >
-                    Źle
-                </button>
-                
-            </div>
-        </div>
-    )
-}
-function Translation(){
-    return(
-        <div className="p-10">
-            <p className="h-20 text-4xl">
-                die Zungenbrecher
-            </p>
-            <div className="text-3xl">
-                {questionData.word}
             </div>
             <ClickToReveal text={questionData.translation}/>
             <div className="flex justify-around">
@@ -71,19 +50,57 @@ function Translation(){
                 >
                     Źle
                 </button>
-                
+            </div>
+        </div>
+    )
+}
+function Translation(){
+    const mainColor = "#223252";
+    const secondColor = "#93a1bb";
+    const textShadow = `0px 1px 1px ${secondColor}, 0px 1px 2px ${secondColor}, 0px 2px 4px ${secondColor}`;
+
+    return(
+        <div className="p-10">
+            <div 
+                className="text-6xl cloister-black p-8 text-white rounded-3xl"
+                style={{backgroundColor: mainColor, textShadow: textShadow}}
+            >
+                die Zungenbrecher
+            </div>
+            <div className="text-3xl">
+                {questionData.translation}
+            </div>
+            <ClickToReveal text={questionData.word}/>
+            <div className="flex justify-around">
+                <button 
+                    className="cursor-pointer w-1/3 h-20 rounded-2xl flex justify-center items-center bg-green-500" 
+                    onClick={() => setIsAnsweredCorrectly(true)}
+                >
+                    Dobrze
+                </button>
+                <button 
+                    className="cursor-pointer w-1/3 h-20 rounded-2xl flex justify-center items-center bg-red-500" 
+                    onClick={() => setIsAnsweredCorrectly(false)}
+                >
+                    Źle
+                </button>
             </div>
         </div>
     )
 }
 function Rebus(){
-    
+    const mainColor = "#223252";
+    const secondColor = "#93a1bb";
+    const textShadow = `0px 1px 1px ${secondColor}, 0px 1px 2px ${secondColor}, 0px 2px 4px ${secondColor}`;
 
     return(
         <div className="p-10">
-            <p className="h-20 text-4xl">
+            <div 
+                className="text-6xl cloister-black p-8 text-white rounded-3xl"
+                style={{backgroundColor: mainColor, textShadow: textShadow}}
+            >
                 der Rebus
-            </p>
+            </div>
             <div className="flex justify-center items-center">
                 <img 
                     src="/tagdersprachen/rebusPhotos/photo1.png"
@@ -114,6 +131,10 @@ function Trivia(){ // MECHANICS DONE!
     const [answer, setAnswer] = useState<boolean | undefined>(undefined);
     const [answersArray, setAnswersArray] = useState<React.JSX.Element[]>();
 
+    const mainColor = "#223252";
+    const secondColor = "#93a1bb";
+    const textShadow = `0px 1px 1px ${secondColor}, 0px 1px 2px ${secondColor}, 0px 2px 4px ${secondColor}`;
+
     function choseAnswer(val: number, e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
         setAnswer(val===0 ? true : false)
         e.currentTarget.style.setProperty("background-color", "red");
@@ -143,9 +164,12 @@ function Trivia(){ // MECHANICS DONE!
     }, [answer])
     return(
         <div className="p-10">
-            <p className="h-20 text-4xl">
-                die Trivia
-            </p>
+            <div 
+                className="text-6xl cloister-black p-8 text-white rounded-3xl"
+                style={{backgroundColor: mainColor, textShadow: textShadow}}
+            >
+                Die Trivia
+            </div>
             <p className="text-3xl">
                 {questionData.question}
             </p>
@@ -181,11 +205,115 @@ function Trivia(){ // MECHANICS DONE!
     )
 }
 function Connections(){
+    const [wordsIndexes, _] = useState(fisherYatesShuffle([0,1,2,3]));
+    const [wordsArray, setWordsArray] = useState<React.JSX.Element[]>();
+
+    const [translationsIndexes, __] = useState(fisherYatesShuffle([0,1,2,3]));
+    const [translationsArray, setTranslationsArray] = useState<React.JSX.Element[]>();
+
+    const [dropsArray, setDropsArray] = useState<React.JSX.Element[]>();
+
+    const mainColor = "#1b2418";
+    const secondColor = "#949d90";
+    const textShadow = `0px 1px 1px ${secondColor}, 0px 1px 2px ${secondColor}, 0px 2px 4px ${secondColor}`
+
+    useEffect(() => {
+        // generating words in german on the site
+        let wordElements : React.JSX.Element[] = [];
+        wordsIndexes.forEach((val) => {
+            const element =<div 
+                    className="draggable bg-green-300 p-2 px-5" 
+                    draggable={true}
+                    id={"drag"+val}
+                    key={val}
+                >
+                    {questionData.terms[val]}
+                </div>
+            
+            wordElements.push(element);
+        })
+        setWordsArray(wordElements);
+
+        // generating translation in polish on the site
+        // generating blank spaces to drop
+        let translationElements : React.JSX.Element[] = [];
+        let dropElements : React.JSX.Element[] = [];
+        translationsIndexes.forEach((val) => {
+            const element =<div 
+                    className="dragover bg-yellow-300 h-10"
+                    key={val}
+                >
+                    {questionData.words[val]}
+                </div>
+            
+            translationElements.push(element);
+
+            const dropElement = <div 
+                    className="dragover drop bg-orange-300 h-10"
+                    id={"drop"+val}
+                >
+                </div>
+            dropElements.push(dropElement);
+        })
+        setTranslationsArray(translationElements);
+        setDropsArray(dropElements);
+
+
+        // drag and drop
+        setTimeout(() => {
+            // drag and drop
+            let draggedItemId: string | null;
+            document.querySelectorAll(".draggable").forEach((val) =>{
+                val.addEventListener("dragstart",(e) => {
+                    const temp = e.currentTarget as HTMLElement | null
+                    draggedItemId = temp?.getAttribute("id") ? temp.getAttribute("id"): "";
+                })
+            })
+            document.querySelectorAll(".drop").forEach((val) =>{
+                val.addEventListener("drop",(e) => {
+                    e.preventDefault();
+                    if(val.children !== null && val.children !== undefined){
+                        const oldAnswer = val.children[0]?.getAttribute("id");
+                        const oldAnswerElement = oldAnswer ? document.getElementById(oldAnswer) : ""
+                        document.getElementById("wordbank")?.append(oldAnswerElement ? oldAnswerElement : "");
+                    }
+                    const newAnswer = document.getElementById(draggedItemId ? draggedItemId : "");
+                    val.append(newAnswer ? newAnswer : "");
+                })
+            })
+            document.querySelectorAll(".dragover").forEach((val) =>{
+                val.addEventListener("dragover",(e) => {
+                    e.preventDefault();
+                })
+            })
+        }, 1)
+    }, []);
+
     return(
         <div className="p-10">
-            <p className="h-20 text-4xl">
+            <div 
+                className="text-6xl cloister-black p-8 text-white rounded-3xl"
+                style={{backgroundColor: mainColor, textShadow: textShadow}}
+            >
                 die Wortverbindungen
-                </p>
+            </div>
+            <div className="flex flex-col dragover h-130 gap-5 px-15 py-7">
+                <div id="wordbank" className="drop dragover flex justify-around h-40 border-2 rounded-3xl">
+                    {/* Word bank */}
+                    {wordsArray}
+                </div>
+                <div className="dragover flex  h-full w-full justify-between">
+                    <div className="dragover flex flex-col justify-around h-full w-1/2 px-10">
+                        {/* po polsku */}
+                        {translationsArray}
+                    </div>
+                    <div className="dragover flex flex-col justify-around h-full w-1/2 px-10">
+                        {/* po niemiecku */}
+                        {dropsArray}
+                    </div>
+                </div>
+            </div>
+
             <div className="flex justify-around">
                 <button 
                     className="cursor-pointer w-1/3 h-20 rounded-2xl flex justify-center items-center bg-green-500" 

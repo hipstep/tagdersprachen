@@ -83,7 +83,7 @@ export default [
     },
     
 
-    // --Translation
+    // --Translation ---------------------------------------------------------------------------------------------------------------------------------------------
     {
         category: "translation",
         word: "das Krankenhaus",
@@ -163,61 +163,92 @@ export default [
     },
 
 
-    // --Rebus
+    // --Rebus -------------------------------------------------------------------------------------------------------------------------------------------
     {
         category: "rebus",
         img: "src",
-        word: "stop"
-    },
-    {
-        category: "rebus",
-        img: "src",
-        word: "stop"
-    },
-    {
-        category: "rebus",
-        img: "src",
-        word: "stop"
-    },
-    {
-        category: "rebus",
-        img: "src",
-        word: "stop"
-    },
-    {
-        category: "rebus",
-        img: "src",
-        word: "stop"
-    },
-    {
-        category: "rebus",
-        img: "src",
-        word: "stop"
-    },
-    {
-        category: "rebus",
-        img: "src",
-        word: "stop"
+        word: "das Handtuch"
     },
 
+    {
+        category: "rebus",
+        img: "src",
+        word: "das Haustier"
+    },
 
-    // --Trivia
-    { // !usuń
+    {
+        category: "rebus",
+        img: "src",
+        word: "der Regenschirm"
+    },
+
+    {
+        category: "rebus",
+        img: "src",
+        word: "die Sonnenbrille"
+    },
+
+    {
+        category: "rebus",
+        img: "src",
+        word: "die Hausaufgabe"
+    },
+
+    {
+        category: "rebus",
+        img: "src",
+        word: "die Geldbörse"
+    },
+             
+    {
+        category: "rebus",
+        img: "src",
+        word: "die Handtasche"
+    },
+
+    {
+        category: "rebus",
+        img: "src",
+        word: "der Zahnarzt"
+    },
+
+    {
+        category: "rebus",
+        img: "src",
+        word: "das Baumhaus"
+    },
+
+    {
+        category: "rebus",
+        img: "src",
+        word: "das Schlafzimmer"
+    },
+
+    {
+        category: "rebus",
+        img: "src",
+        word: "der Handschuh"
+    },
+        
+    
+//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      // jesli to czytasz to jestes gejem                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+    // --Trivia --------------------------------------------------------------------------------------------------------------------------------------------
+    {
         category: "trivia",
-        question: "Jaka jest stolica Niemiec?",
-        answers: ["Berlin", "Monachium", "Hamburg", "Frankfurt"]
+        question: "Jaki jest najwyższy szczyt w Niemczech?",
+        answers: ["Zugspitze", "Feldberg", "Watzmann", "Brocken"]
     },
 
-    { // !usuń
+    {
         category: "trivia",
-        question: "Jakie kolory znajdują się na fladze Niemiec?",
-        answers: ["Czarny, czerwony i złoty", "Czerwony, biały i niebieski", "Czarny, biały i czerwony", "Zielony, żółty i czerwony"]
+        question: "W którym roku doszło do zjednoczenia Niemiec (RFN i NRD)?",
+        answers: ["1990", "1989", "1991", "1985"]
     },
 
-    { // !usuń
+    {
         category: "trivia",
-        question: "Z jakiego kraju pochodzi marka Volkswagen?",
-        answers: ["Niemcy", "Francja", "Włochy", "Szwecja"]
+        question: "Jaka jest najdłuższa rzeka w Niemczech?",
+        answers: ["Ren", "Łaba", "Dunaj", "Sprewa"]
     },
 
     {
@@ -232,10 +263,10 @@ export default [
         answers: ["Oktoberfest", "Karneval", "Berlinale", "Weinfest"]
     },
 
-    { // !usuń
+    {
         category: "trivia",
-        question: "Jaką walutą płaci się w Niemczech?",
-        answers: ["Euro", "Marką", "Frankiem", "Koroną"]
+        question: "Z ilu krajów związkowych (landów) składają się Niemcy?",
+        answers: ["16", "12", "10", "18"]
     },
 
     {
@@ -262,30 +293,108 @@ export default [
         answers: ["Schwarz, Rot und Gold", "Blau, Weiß und Rot", "Grün, Weiß und Rot", "Schwarz, Blau und Weiß"]
     },
 
-    { // !usuń
+    {
         category: "trivia",
-        question: "Welche Sprache spricht man in Deutschland?",
-        answers: ["Deutsch", "Spanisch", "Italienisch", "Französisch"]
+        question: "Was trinkt man traditionell auf dem Oktoberfest?",
+        answers: ["Bier", "Wasser", "Kaffee", "Milch"]
     },
 
-    { // !usuń
+    {
         category: "trivia",
-        question: "Który dokument z 1949 roku stanowi podstawę ustroju Republiki Federalnej Niemiec?",
-        answers: ["Grundgesetz", "Reichsgesetz", "Bundesvertrag", "Deutschlandgesetz"]
+        question: "Welche Automarke kommt aus Deutschland?",
+        answers: ["BMW", "Fiat", "Peugeot", "Volvo"]
     },
 
 
-    // --Connections
+    // --Connections ------------------------------------------------------------------------------------------------------------------------------------------------
+    //1
     {
         category: "connections",
-        words: ["pupa", "ogon", "palec", "stopa"],
-        terms: ["das Baum", "der Ogon", "der Palec", "der Fuss"]
-    }
-]
+        words: ["pupa", "głowa", "palec", "stopa"],
+        terms: ["das Baum", "der Kopf", "der Palec", "der Fuss"]
+    },
 
-// EDJO
-// - lamaniec jezykowy
-// - przetlumacz slowko
-// - rebus
-// - pytanie o niemcy
-// - dopasuj slowka
+    //2
+    {
+        category: "connections",
+        words: ["szkoła podstawowa", "matura", "wycieczka szkolna", "impreza"],
+        terms: ["die Grundschule", "das Abitur", "die Klassenfahrt", "die Veranstaltung"]
+    },
+
+    //3
+    {
+        category: "connections",
+        words: ["księgowość", "praca dodatkowa", "szpital", "doświadczenie zawodowe"],
+        terms: ["die Buchhaltung", "der Nebenjob", "das Krankenhaus", "die Berufserfahrung"]
+    },
+
+    //4
+    {
+        category: "connections",
+        words: ["wesele", "dzień świąteczny", "urodziny", "zaproszenie"],
+        terms: ["die Hochzeit", "der Feiertag", "der Geburtstag", "die Einladung"]
+    },
+
+    //5
+    {
+        category: "connections",
+        words: ["przyprawa", "makaron", "kiełbasa", "zupa pomidorowa"],
+        terms: ["das Gewürz", "die Nudel", "die Wurst", "die Tomatensuppe"]
+    },
+
+    //6
+    {
+        category: "connections",
+        words: ["gruszka", "truskawka", "śliwka", "jabłko"],
+        terms: ["die Birne", "die Erdbeere", "die Pflaume", "der Apfel"]
+    },
+
+    //7
+    {
+        category: "connections",
+        words: ["paczka", "paragon", "drobne", "sklep"],
+        terms: ["das Paket", "der Beleg", "das Kleingeld", "das Geschäft"]
+    },
+
+    //8
+    {
+        category: "connections",
+        words: ["autobus", "mapa", "kierunek", "lotnisko"],
+        terms: ["der Bus", "die Landkarte", "die Richtung", "der Flughafen"]
+    },
+
+    //9
+    {
+        category: "connections",
+        words: ["sztuka", "rysunek", "malarz", "teatr"],
+        terms: ["die Kunst", "die Zeichnung", "der Maler", "das Theater"]
+    },
+
+    //10
+    {
+        category: "connections",
+        words: ["literatura", "pamiętnik", "poeta", "gazeta"],
+        terms: ["die Literatur", "das Tagebuch", "der Dichter", "die Zeitung"]
+    },
+
+    //11
+    {
+        category: "connections",
+        words: ["medal", "mistrzostwa", "zwycięzca", "turniej"],
+        terms: ["die Medaille", "die Meisterschaft", "der Sieger", "das Turnier"]
+    },
+
+    //12
+    {
+        category: "connections",
+        words: ["rzeka", "góra", "wyspa", "las"],
+        terms: ["der Fluss", "der Berg", "die Insel", "der Wald"]
+    },
+
+    //13
+    {
+        category: "connections",
+        words: ["kura", "dzik", "ptak", "pies"],
+        terms: ["die Henne", "das Wildschwein", "der Vogel", "der Hund"]
+    },
+]

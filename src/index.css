@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Manufacturing Consent";
+  src: url("/public/fonts/Manufacturing_Consent/ManufacturingConsent-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Cloister Black";
+  src: url(/public/fonts/cloister_black/CloisterBlack.ttf);
+}
+
+.manufacturing-consent {
+  font-family: "Manufacturing Consent", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.cloister-black {
+  font-family: "Cloister Black", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --text-h: #08060d;
   --bg: #fff;

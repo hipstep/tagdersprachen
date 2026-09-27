@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 type propsTypes = {
-    text: string    
+    text: string,
 }
 
 function ClickToReveal(props: propsTypes){

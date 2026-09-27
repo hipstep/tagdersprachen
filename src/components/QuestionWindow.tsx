@@ -3,6 +3,8 @@ import QuestionCard from "./QuestionCard"
 import QuestionFace from "./QuestionFace";
 import data from "../data/data";
 
+import background from "../assets/photos/textureBackground.png"
+
 type propsTypes = {
     setIsAnsweredCorrectly: any,
     diceRoll: number | undefined
@@ -16,7 +18,7 @@ function QuestionWindow(props: propsTypes) {
 
     const [checkAnswer, setCheckAnswer] = useState<boolean | undefined>(undefined);
 
-    useEffect (() => {
+    useEffect (() => { // checks answer
         if(checkAnswer !== undefined)
             props.setIsAnsweredCorrectly(checkAnswer);
     }, [checkAnswer])
@@ -81,14 +83,15 @@ function QuestionWindow(props: propsTypes) {
     return(
         <div 
             className="w-2/3 h-5/6 absolute top-1/2 left-1/2 rounded-3xl -translate-1/2 bg-auto bg-center bg-[#bfa87d] z-100"
+            style={{backgroundImage: `url(${background})`}}
             >
 
             {(
                 !isQuestionPicked
                 &&
                 <>
-                    <div className="absolute top-1/30 left-1/2 -translate-x-1/2 text-3xl text-black">
-                        Wylosowana liczba: <b>{props.diceRoll}</b>
+                    <div className="absolute top-1/30 left-1/2 -translate-x-1/2 text-[45px] text-shadow-md text-shadow-white/50 text-black cloister-black">
+                        Liczba oczek: <b>{props.diceRoll}</b>
                     </div>
                     <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-10 px-20 py-16">
                         <QuestionCard questionIndex={randomizedQuestions[0]} setIsQuestionPicked={setIsQuestionPicked} setPickedQuestion={setPickedQuestion}/>
