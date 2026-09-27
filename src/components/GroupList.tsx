@@ -10,10 +10,24 @@ type propsTypesLine = {
 }
 
 function GroupLine(props: propsTypesLine){
+    const categoryBorderColours: Record<number, string> = {
+        0: "#2f4676",
+        1: "#783c39",
+        2: "#543664",
+        3: "#7a6a3f",
+        4: "#34442d",
+    };
+    const textColour = categoryBorderColours[props.groupId];
+    const bgColor = props.currentGroup === props.groupId ? "#bd9b5b" : "#d1c6b2"
     return(
-        <div className="flex px-2 justify-between text-2xl rounded-3xl border-2" id={`team${props.groupId}`} style={props.currentGroup === props.groupId ? {backgroundColor: "#bd9b5b"} : {backgroundColor: "#d1c6b2"}}>
-                <p>Gruppe Nr. {props.groupId+1}</p>
-                <p className="font-bold">{props.teamsPosition[props.groupId]+1}</p>
+        <div 
+            className="flex px-2 gap-5 items-center text-2xl rounded-3xl border-4" 
+            id={`team${props.groupId}`} 
+            style={{color: textColour, backgroundColor: bgColor}}
+        >
+            <div className="rounded-full w-5 h-5" style={{backgroundColor: textColour}}/>
+            <p>Gruppe Nr.{props.groupId+1}</p>
+            <p className="font-bold">{props.teamsPosition[props.groupId]+1}</p>
         </div>
     )
 }

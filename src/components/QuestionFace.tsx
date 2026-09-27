@@ -338,6 +338,10 @@ function Connections(){
                         document.getElementById(`drag${i}`)?.style.setProperty("background-color", "#c46c6c");
                         document.getElementById(`drop${i}`)?.style.setProperty("background-color", "#c46c6c");
                     }
+                    else{
+                        document.getElementById(`drag${i}`)?.style.setProperty("background-color", "#86c77d");
+                        document.getElementById(`drop${i}`)?.style.setProperty("background-color", "#86c77d");
+                    }
                 }
                 else{
                     tempAnswer = false;
