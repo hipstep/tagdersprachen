@@ -164,11 +164,41 @@ export default [
 
 
     // --Rebus
-    // {
-    //     category: "rebus",
-    //     img: "src",
-    //     word: "stop"
-    // },
+    {
+        category: "rebus",
+        img: "src",
+        word: "stop"
+    },
+    {
+        category: "rebus",
+        img: "src",
+        word: "stop"
+    },
+    {
+        category: "rebus",
+        img: "src",
+        word: "stop"
+    },
+    {
+        category: "rebus",
+        img: "src",
+        word: "stop"
+    },
+    {
+        category: "rebus",
+        img: "src",
+        word: "stop"
+    },
+    {
+        category: "rebus",
+        img: "src",
+        word: "stop"
+    },
+    {
+        category: "rebus",
+        img: "src",
+        word: "stop"
+    },
 
 
     // --Trivia

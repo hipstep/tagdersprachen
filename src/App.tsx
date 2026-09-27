@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
-import QuestionWindow from './components/QuestionWindow'
-
-import boardBackground from "./assets/photos/boardBackground.png";
+import QuestionWindow from './components/QuestionWindow';
 import GroupList from './components/GroupList';
 import Dice from './components/Dice';
+
+import boardBackground from "./assets/photos/boardBackground.png";
+
 
 function App() {
   const [isQuestionWindowOpen, setIsQuestionWindowOpen] = useState(false);
